@@ -1,0 +1,367 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+
+/*------------------
+  universal setup
+-------------------*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*------------------
+  Body and container setup
+-------------------*/
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    background-color: #f5f5f5;
+    line-height: 1.5;
+
+}
+
+.container {
+    max-width: 1180px;
+    margin: 25px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+
+/*------------------
+  Header setup
+-------------------*/
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 5px;
+    background-color: #3474e6;
+}
+header img:hover {
+   transform: scale(1.2, 1.2) rotate(180deg);
+    
+}
+header img {
+    width: 30%;
+    height: 70%;
+    transition: transform 1s;
+}
+
+
+/*------------------
+  Navbar setup
+-------------------*/
+
+nav {
+    margin-bottom: 5px;
+    background-color: #3474e6;
+    height: 60px;
+}
+nav ul {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    list-style-type: none;
+    font-weight: bold;
+    font-size: 18px;
+    height: 100%;
+}
+ nav a {
+    color: #ffd700;
+    text-decoration: none;
+    letter-spacing: 2px;
+    display: block;
+    transition: transform  0.3s linear;
+    
+ }
+
+ nav a:hover {
+    transform: scale(1.2, 1.2);
+    border-bottom: 4px solid #fff;
+   
+ }
+
+ .bottom-border {
+    border-bottom: 4px solid #fff;
+ }
+  
+ .no-bottom-border {
+    border-bottom: none;
+ }
+
+ 
+/*------------------
+  Main setup
+-------------------*/
+  
+main {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+/*------------------
+  First section setup
+-------------------*/
+
+/* Imageshop animation */
+@keyframes ImageZoom {
+    from { transform: scale(0,0);}
+    to { transform: scale(1,1);}
+} 
+section:first-child {
+    display: flex;
+    justify-content:flex-start;
+    align-items: flex-start;
+    margin-bottom: 20px;  
+    color: #fff;
+    padding: 0px;
+    width: 100%;
+    height: 320px;
+    animation-name: ImageZoom;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards; 
+}
+   
+section:first-child img {
+    
+    min-height: fit-content;
+    overflow: hidden;
+}
+
+
+section:first-child div {
+    padding-top: 100px;
+    text-align: center;  
+    background-image: url("../images/shop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;    
+}
+
+section:first-child div h1{
+    font-size: 30px;
+    letter-spacing: 3px;
+    color: #000;
+}
+
+section:first-child  div > span{ 
+    font-style: italic;   
+    letter-spacing: 1px;
+    opacity: 75%;
+    color: #000;
+        
+} 
+
+
+section:first-child div p{
+    font-size: 18px;
+    letter-spacing: 3px;
+    margin-top: 15px;
+    font-family: verdana, georgia;
+} 
+
+section:first-child div p span{
+    
+    font-weight: bold;
+    
+} 
+
+/*----------------------------
+  Second and last section setup
+----------------------------*/
+
+main section:nth-of-type(2){
+    display: flex;
+    justify-content: space-between;
+    column-gap: 25px;
+    margin-bottom: 30px;  
+      
+}
+
+/* articles*/
+section:nth-of-type(2) article {
+    padding: 0;
+    background-color: #0151cc;
+    color: #fff;
+    border-radius: 20px;
+    transition: transform 0.5s;
+    text-align: center;
+    height: 460px;
+}
+
+section:nth-of-type(2) article:hover {
+    transform: scale(1.06, 1.06);
+}
+
+section:nth-of-type(2) article p {
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 5px 20px;
+    
+}
+section:nth-of-type(2) h2{
+    color: #f7ba71;
+    letter-spacing: 2px;
+    font-weight:bolder;   
+    
+} 
+
+section:nth-of-type(2) p a{
+    color: #ffd700;
+    letter-spacing: 1px;    
+} 
+
+section:nth-of-type(2) img{
+    width: 100%;
+    height: 50%;
+    padding-top: 0px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border: 3px solid  #0151cc;          
+    
+} 
+
+
+/*------------------
+  Footer setup
+-------------------*/
+footer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    height: 60px;
+    background-color: #3474e6;
+    
+}
+
+footer img {
+    width: 30%;
+    height: 30%;    
+}
+footer div {
+    text-align: center;
+    
+}
+
+footer div p {
+    color: #000;
+    font-style: italic;
+    font-weight:500;
+    
+}
+
+
+/*------------------
+  Media queries setup
+-------------------*/
+@media only screen and (max-width: 768px) {
+    /* Navbar */
+
+    nav {
+        margin-bottom: 20px;
+    }
+
+    nav ul {   
+        justify-content:center;          
+        font-size: 14px;
+    }
+
+    nav li {
+        padding-right: 10px;
+    }
+
+    nav a:hover {
+        transform: scale(1.05, 1.05);
+        border-bottom: 1px solid #fff;       
+    }
+
+    .bottom-border {
+        border-bottom: 1px solid #fff;
+    }
+
+    .no-bottom-border {
+        border-bottom: none;
+    }
+
+  /* first section */
+    section:first-child {
+      flex-direction: column;
+      margin-top: -25px;    
+      margin-bottom: 5px;     
+      padding: 2px 0;
+    }
+
+    section:first-child div h1{
+        font-size: 14px;
+        letter-spacing: 0.5px;             
+    }
+    
+    section:first-child  div > span{ 
+        letter-spacing: 0.2px;       
+        font-size: 12px;         
+    }     
+    
+    section:first-child div p{
+        font-size: 12px;
+        letter-spacing: 0.5px;
+        margin-top: 5px;
+        padding: 0 40px;        
+    } 
+    
+    /* section 2 with 3 articles*/
+    main section:nth-of-type(2){        
+        flex-direction: column;
+        margin-bottom: 10px;  
+          
+    }
+
+    section:nth-of-type(2) article {        
+        margin-bottom: 8px;
+        height: 360px;
+        
+    }
+    
+    section:nth-of-type(2) article:hover {
+        transform: scale(1.02, 1.02);
+    }
+    
+    section:nth-of-type(2) article p {
+        font-size: 12px;
+        letter-spacing: 1px;
+        padding: 5px 10px;
+        
+    }
+    section:nth-of-type(2) h2{
+        color: #f7ba71;
+        letter-spacing: 2px;
+        font-weight:bolder;   
+        
+    } 
+           
+        
+    /* footer */
+    footer {        
+        grid-template-columns: repeat(1, 1fr);
+        padding-top: 5px;               
+    }
+           
+    footer div p {
+        font-size: 12px;
+        font-weight: bold;        
+    }
+
+
+}
